@@ -1,3 +1,6 @@
+credential*
+token*
+
 # Logs
 logs
 *.log
