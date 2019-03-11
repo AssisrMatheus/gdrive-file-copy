@@ -11,7 +11,11 @@ const main = async () => {
             const startTime = moment();
             const file = files[i];
 
-            await manipulateFile(file, i);
+            try {
+                await manipulateFile(file, i);
+            } catch (ex) {
+                console.error(`| === Error ${ex}`);
+            }
 
             const finishTime = moment();
 
