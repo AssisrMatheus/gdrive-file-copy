@@ -28,9 +28,10 @@ const main = async () => {
             average = total / (i + 1);
 
             // ETA = remaining length * average
-            const eta = moment.duration((files.length - (i + 1)) * average);
+            const filesLeft = (files.length - (i + 1));
+            const eta = moment.duration(filesLeft * average);
             console.log(`|`);
-            console.log(`| === Processed ${moment.duration(difference).humanize(true)} - ETA: ${eta.humanize(true)}`);
+            console.log(`| === Processed ${moment.duration(difference).humanize(true)} - ${filesLeft} files left - ETA: ${eta.humanize(true)}`);
             console.log(`|`);
         }
     }
